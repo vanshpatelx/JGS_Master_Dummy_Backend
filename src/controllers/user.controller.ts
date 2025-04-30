@@ -1,3 +1,4 @@
+import { userInfo } from 'os';
 import { createAccessToken, createRefreshToken, verifyRefreshToken } from '../utils/jwt';
 import { Request, Response } from 'express';
 
@@ -18,8 +19,8 @@ export const loginUser = (req: Request, res: Response) => {
         return;
     }
   
-    const accessToken = createAccessToken({ username: user.username, type: user.type });
-    const refreshToken = createRefreshToken({ username: user.username, type: user.type });
+    const accessToken = createAccessToken({ username: user.username, type: user.type, id: user.id });
+    const refreshToken = createRefreshToken({ username: user.username, type: user.type, id: user.id });
   
     res.status(200).json({
       accessToken,
@@ -41,9 +42,10 @@ export const refreshAccessToken = (req: Request, res: Response) => {
       const payload = verifyRefreshToken(refreshToken) as {
         username: string;
         type: 'client' | 'master' | 'admin';
+        id: string;
       };
   
-      const newAccessToken = createAccessToken({ username: payload.username, type: payload.type });
+      const newAccessToken = createAccessToken({ username: payload.username, type: payload.type, id: payload.id });
   
         res.json({ accessToken: newAccessToken });
     } catch (err) {

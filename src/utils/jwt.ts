@@ -1,9 +1,9 @@
 import jwt from 'jsonwebtoken';
 
-const ACCESS_TOKEN_SECRET = "helloworld";
-const REFRESH_TOKEN_SECRET = "HelloRefresh";
+export const ACCESS_TOKEN_SECRET = "helloworld";
+export const REFRESH_TOKEN_SECRET = "HelloRefresh";
 
-interface Payload {
+export interface Payload {
   username: string;
   type: 'client' | 'master' | 'admin';
   id: string;
@@ -24,3 +24,4 @@ export const verifyAccessToken = (token: string) => {
 export const verifyRefreshToken = (token: string) => {
   return jwt.verify(token, REFRESH_TOKEN_SECRET);
 };
+
