@@ -18,8 +18,12 @@ Auth:
     segments: "OPTIONS",
     filter: {
         ["MAY", "JUNE"],
-        
     }
+},
+
+{
+    segments: "Futures",
+    filter: ["MAY", "JUNE"]
 },
 {
     segments: "FUTURE",
