@@ -29,10 +29,10 @@ export const watchlistData = (req: AuthenticatedRequest, res: Response) => {
         switch (segments) {
             case 'BSE':
                 stocks.push(
-                    { ticker: 'SUZLON-EQ', type: 'BSE' },
-                    { ticker: 'TATASTEEL-EQ', type: 'BSE' },
-                    { ticker: 'TATAMOTORS-EQ', type: 'BSE' },
-                    { ticker: 'TATAPOWER-EQ', type: 'BSE' },
+                    { ticker: 'SUZLON-EQ', type: 'BSE', name: 'SUZLON'},
+                    { ticker: 'TATASTEEL-EQ', type: 'BSE', name: 'TATA STEEL', },
+                    { ticker: 'TATAMOTORS-EQ', type: 'BSE', name: 'TATA MOTORS' },
+                    { ticker: 'TATAPOWER-EQ', type: 'BSE', name: 'TATA POWER' },
                     { ticker: 'RELIANCE-EQ', type: 'BSE' },
                     { ticker: 'INFY-EQ', type: 'BSE' },
                     { ticker: 'HDFCBANK-EQ', type: 'BSE' },
@@ -119,15 +119,15 @@ export const watchlistData = (req: AuthenticatedRequest, res: Response) => {
                 const filterArray = Array.isArray(filter) ? filter : [filter];
 
                 let temp = [
-                    { ticker: 'NIFTY20OCTFUT', date: '2025-10-20', type: 'FUTURES' },
-                    { ticker: 'BANKNIFTY20OCTFUT', date: '2025-10-22', type: 'FUTURES' },
-                    { ticker: 'SENSEX20OCTFUT', date: '2025-10-24', type: 'FUTURES' },
-                    { ticker: 'NIFTY20NOVFUT', date: '2025-11-25', type: 'FUTURES' },
-                    { ticker: 'BANKNIFTY20NOVFUT', date: '2025-11-25', type: 'FUTURES' },
-                    { ticker: 'SENSEX20NOVFUT', date: '2025-11-21', type: 'FUTURES' },
-                    { ticker: 'NIFTY20DECFUT', date: '2025-12-20', type: 'FUTURES' },
-                    { ticker: 'BANKNIFTY20DECFUT', date: '2025-12-22', type: 'FUTURES' },
-                    { ticker: 'SENSEX20DECFUT', date: '2025-12-27', type: 'FUTURES' },
+                    { ticker: 'NSE:NIFTY20OCTFUT', date: '2025-10-20', type: 'FUTURES' },
+                    { ticker: 'NSE:BANKNIFTY20OCTFUT', date: '2025-10-22', type: 'FUTURES' },
+                    { ticker: 'NSE:SENSEX20OCTFUT', date: '2025-10-24', type: 'FUTURES' },
+                    { ticker: 'NSE:NIFTY20NOVFUT', date: '2025-11-25', type: 'FUTURES' },
+                    { ticker: 'BSE:BANKNIFTY20NOVFUT', date: '2025-11-25', type: 'FUTURES' },
+                    { ticker: 'BSE:SENSEX20NOVFUT', date: '2025-11-21', type: 'FUTURES' },
+                    { ticker: 'BSE:NIFTY20DECFUT', date: '2025-12-20', type: 'FUTURES' },
+                    { ticker: 'NSE:BANKNIFTY20DECFUT', date: '2025-12-22', type: 'FUTURES' },
+                    { ticker: 'NSE:SENSEX20DECFUT', date: '2025-12-27', type: 'FUTURES' },
                 ];
 
                 temp = temp.filter(item =>
