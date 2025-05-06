@@ -18,6 +18,7 @@ export const authenticateToken = (
     res.status(401).json({ message: 'No token provided' });
     return;
   }
+  console.log(token);
 
   jwt.verify(token, ACCESS_TOKEN_SECRET, (err, decoded) => {
     if (err) {

@@ -11,11 +11,11 @@ const monthToWeeklyCode: Record<string, string> = {
 export const watchlistData = (req: AuthenticatedRequest, res: Response) => {
     try {
         const id = req.user?.id;
-        if (!id) {
+        if (Number(id) !== 1) {
             res.status(401).json({ message: 'Unauthorized' });
             return;
-        }
-
+        }        
+        
         const segments = req.query.segments as string;
         const filter = req.query.filter as string[] | string | undefined;
 
