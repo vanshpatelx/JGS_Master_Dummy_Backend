@@ -24,6 +24,7 @@ app.use('/api', portfolioRouter);
 
 
 app.listen(PORT, () => {
+  console.log(`Hello`);
   console.log(`Server running on http://localhost:${PORT}`);
   console.log(`Swagger docs at http://localhost:${PORT}/api-docs`);
 });
