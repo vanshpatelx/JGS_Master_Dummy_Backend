@@ -19,7 +19,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/portfolio:
+ * /api/api/portfolio:
  *   get:
  *     summary: Get user portfolio
  *     tags: [Portfolio]
@@ -35,7 +35,7 @@ router.get('/portfolio', authenticateToken, portfolioData);
 
 /**
  * @swagger
- * /api/trade:
+ * /api/api/trade:
  *   post:
  *     summary: Place a trade order
  *     tags: [Portfolio]
@@ -78,7 +78,7 @@ router.post('/trade', authenticateToken, tradeFun);
 
 /**
  * @swagger
- * /api/rollOver:
+ * /api/api/rollOver:
  *   get:
  *     summary: Roll over all eligible positions
  *     tags: [Portfolio]
@@ -95,7 +95,7 @@ router.get('/rollOver', authenticateToken, rollOver);
 
 /**
  * @swagger
- * /api/closeAll:
+ * /api/api/closeAll:
  *   get:
  *     summary: Close all open positions
  *     tags: [Portfolio]

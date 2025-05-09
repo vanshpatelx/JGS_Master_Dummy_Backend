@@ -10,7 +10,7 @@ const options: swaggerJSDoc.Options = {
     },
     servers: [
       {
-        url: 'https://jgedemomaster.oceanlab.in/api/',
+        url: 'https://jgedemomaster.oceanlab.in/',
       },
       {
         url: 'http://localhost:3000',

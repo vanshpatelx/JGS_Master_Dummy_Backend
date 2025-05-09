@@ -20,7 +20,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/hero:
+ * /api/api/hero:
  *   get:
  *     summary: Get hero stock data
  *     tags: [Hero]
