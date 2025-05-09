@@ -1,6 +1,6 @@
 export interface Stock {
     ticker: string;
-    type: 'BSE' | 'NSE' | 'OPTIONS' | 'FUTURES';
+    type: 'BSE' | 'NSE' | 'OPTIONS' | 'FUTURES' | 'None';
     name?: string;
     date?: string;
 }
@@ -71,4 +71,13 @@ export const STOCKS: Stock[] = [
     { ticker: 'BSE:NIFTY20DECFUT', type: 'FUTURES', date: '2025-12-20' },
     { ticker: 'NSE:BANKNIFTY20DECFUT', type: 'FUTURES', date: '2025-12-22' },
     { ticker: 'NSE:SENSEX20DECFUT', type: 'FUTURES', date: '2025-12-27' },
+
+    { ticker: 'SENSEX-SPOT', type: 'None' },
+    { ticker: 'SENSEX-FUTURE' , type: 'None' },
+    { ticker: 'BANKNIFTY-SPOT', type: 'None' },
+    { ticker: 'BANKNIFTY-FUTURE' , type: 'None' },
+    { ticker: 'NIFTY-SPOT', type: 'None' },
+    { ticker: 'NIFTY-FUTURE' , type: 'None' },
+
+
 ];
