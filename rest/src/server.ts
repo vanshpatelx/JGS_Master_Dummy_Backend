@@ -16,11 +16,11 @@ app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Routes
-app.use('/api', userRouter);
-app.use('/api', newsRouter);
-app.use('/api', heroRouter);
-app.use('/api', watchlistRouter);
-app.use('/api', portfolioRouter);
+app.use('/', userRouter);
+app.use('/', newsRouter);
+app.use('/', heroRouter);
+app.use('/', watchlistRouter);
+app.use('/', portfolioRouter);
 
 
 app.listen(PORT, () => {

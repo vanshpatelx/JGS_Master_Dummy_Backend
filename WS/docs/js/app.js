@@ -4,11 +4,11 @@
   "info": {
     "title": "Stock WebSocket API",
     "version": "1.0.0",
-    "description": "This WebSocket server allows clients to subscribe/unsubscribe to stock tickers and receive real-time stock price updates.\n\n**Connection URL:** `ws://localhost:8080`\n\n**Authentication:** JWT Token passed as `Sec-WebSocket-Protocol` during handshake.\n\n**Example:**\n```js\nconst ws = new WebSocket(\"ws://localhost:8080\", \"your-jwt-token\");\n```\n"
+    "description": "This WebSocket server allows clients to subscribe/unsubscribe to stock tickers and receive real-time stock price updates.\n\n**Connection URL:** `wss://JGEDemoMaster.oceanlab.in`\n\n**Authentication:** JWT Token passed as `Sec-WebSocket-Protocol` during handshake.\n\n**Example:**\n```js\nconst ws = new WebSocket(\"wss://JGEDemoMaster.oceanlab.in\", \"your-jwt-token\");\n```\n"
   },
   "servers": {
     "websocket": {
-      "url": "ws://localhost:8080",
+      "url": "wss://JGEDemoMaster.oceanlab.in",
       "protocol": "ws",
       "description": "WebSocket stock price server"
     }

@@ -5,18 +5,18 @@ info:
   description: |
     This WebSocket server allows clients to subscribe/unsubscribe to stock tickers and receive real-time stock price updates.
 
-    **Connection URL:** `ws://localhost:8080`
+    **Connection URL:** `wss://JGEDemoMaster.oceanlab.in`
 
     **Authentication:** JWT Token passed as `Sec-WebSocket-Protocol` during handshake.
 
     **Example:**
     ```js
-    const ws = new WebSocket("ws://localhost:8080", "your-jwt-token");
+    const ws = new WebSocket("wss://JGEDemoMaster.oceanlab.in", "your-jwt-token");
     ```
 
 servers:
   websocket:
-    url: ws://localhost:8080
+    url: wss://JGEDemoMaster.oceanlab.in
     protocol: ws
     description: WebSocket stock price server
 
