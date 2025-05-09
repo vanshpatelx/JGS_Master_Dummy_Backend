@@ -13,7 +13,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/api/login:
+ * /api/login:
  *   post:
  *     summary: Login user
  *     tags: [Users]
@@ -39,7 +39,7 @@ router.post('/login', loginUser);
 
 /**
  * @swagger
- * /api/api/refresh-token:
+ * /api/refresh-token:
  *   post:
  *     summary: Refresh access token
  *     tags: [Users]

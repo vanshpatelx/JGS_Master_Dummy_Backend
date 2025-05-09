@@ -21,7 +21,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/api/news:
+ * /api/news:
  *   get:
  *     summary: Get news data
  *     tags: [News]

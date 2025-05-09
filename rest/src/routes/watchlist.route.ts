@@ -19,7 +19,7 @@ const router = Router();
 
 /**
  * @swagger
- * /api/api/watchlist:
+ * /api/watchlist:
  *   get:
  *     summary: Fetch watchlist stocks for a user based on segment and optional filter.
  *     tags: [Watchlist]
