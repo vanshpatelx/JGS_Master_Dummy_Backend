@@ -1,0 +1,96 @@
+asyncapi: 2.6.0
+info:
+  title: Stock WebSocket API
+  version: 1.0.0
+  description: |
+    This WebSocket server allows clients to subscribe/unsubscribe to stock tickers and receive real-time stock price updates.
+
+    **Connection URL:** `ws://localhost:8080`
+
+    **Authentication:** JWT Token passed as `Sec-WebSocket-Protocol` during handshake.
+
+    **Example:**
+    ```js
+    const ws = new WebSocket("ws://localhost:8080", "your-jwt-token");
+    ```
+
+servers:
+  websocket:
+    url: ws://localhost:8080
+    protocol: ws
+    description: WebSocket stock price server
+
+defaultContentType: application/json
+
+channels:
+  stocks/subscribe:
+    description: Subscribe to a stock's real-time updates
+    subscribe:
+      summary: Receive price updates
+      message:
+        $ref: '#/components/messages/StockUpdate'
+  stocks/control:
+    description: Send subscription/unsubscription messages
+    publish:
+      summary: Send subscribe/unsubscribe actions
+      message:
+        oneOf:
+          - $ref: '#/components/messages/SubscribeMessage'
+          - $ref: '#/components/messages/UnsubscribeMessage'
+
+components:
+  messages:
+    SubscribeMessage:
+      name: SubscribeMessage
+      summary: Subscribe to a stock ticker
+      payload:
+        type: object
+        properties:
+          type:
+            type: string
+            enum: [subscribe]
+          ticker:
+            type: string
+        required:
+          - type
+          - ticker
+
+    UnsubscribeMessage:
+      name: UnsubscribeMessage
+      summary: Unsubscribe from a stock ticker
+      payload:
+        type: object
+        properties:
+          type:
+            type: string
+            enum: [unsubscribe]
+          ticker:
+            type: string
+        required:
+          - type
+          - ticker
+
+    StockUpdate:
+      name: StockUpdate
+      summary: Stock price update message
+      payload:
+        type: object
+        properties:
+          t:
+            type: string
+            description: Ticker symbol
+          b:
+            type: number
+            description: Bid price
+          s:
+            type: number
+            description: Sell price
+          l:
+            type: number
+            description: Low price
+          ltp:
+            type: number
+            description: Last traded price
+          h:
+            type: number
+            description: High price
